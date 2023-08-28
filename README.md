@@ -1,4 +1,4 @@
-# Breast Cancer Prediction using Breast Cancer Wisconsin (Diagnostic) Data Set
+# Breast Cancer Prediction using Machine Learning
 
 This GitHub repository contains code for predicting breast cancer using the Breast Cancer Wisconsin (Diagnostic) Data Set from Kaggle. The prediction is done using a logistic regression model, and the analysis includes data visualization using Seaborn and data manipulation using Pandas.
 
