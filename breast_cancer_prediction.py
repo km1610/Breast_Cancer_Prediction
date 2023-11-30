@@ -60,3 +60,63 @@ plt.show()
 #get accuracy score for model
 from sklearn.metrics  import accuracy_score
 print(accuracy_score(y_test,p))
+
+
+from sklearn import tree
+from sklearn.model_selection import train_test_split
+
+clf = tree.DecisionTreeClassifier(random_state=42)
+
+# Train the classifier on the training set
+clf.fit(x_train, y_train)
+
+y_pred = clf.predict(x_test)
+cm = confusion_matrix(y_test,y_pred)
+sns.heatmap(cm,annot=True)
+# Evaluate the accuracy of the model
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy}")
+
+from sklearn.ensemble import RandomForestClassifier
+
+# Create a Random Forest classifier
+rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+
+# Train the classifier on the training set
+rf_classifier.fit(x_train, y_train)
+
+# Make predictions on the testing set
+y_pred = rf_classifier.predict(x_test)
+cm = confusion_matrix(y_test,y_pred)
+sns.heatmap(cm,annot=True)
+# Evaluate the accuracy of the model
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy}")
+
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+# Create and train the linear regression model
+model = LinearRegression()
+model.fit(x_train, y_train)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+print(f"Mean Squared Error: {mse}")
+
+from sklearn import svm
+
+# Create a SVM classifier
+svm_classifier = svm.SVC(kernel='rbf')  # You can choose different kernels like 'linear', 'rbf', 'poly', etc.
+
+# Train the classifier on the training set
+svm_classifier.fit(x_train, y_train)
+
+# Make predictions on the testing set
+y_pred = svm_classifier.predict(x_test)
+cm = confusion_matrix(y_test,y_pred)
+sns.heatmap(cm,annot=True)
+# Evaluate the accuracy of the model
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy}")
+
